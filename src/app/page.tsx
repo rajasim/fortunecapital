@@ -73,9 +73,7 @@ export default function UserDashboard() {
             >
               <Lock size={14} /> Admin Access
             </button>
-            <button className="bg-slate-900 text-white text-[10px] font-black px-6 md:px-8 py-3.5 rounded-2xl hover:bg-indigo-600 transition-all shadow-xl uppercase tracking-widest">
-              Enroll Now
-            </button>
+            
           </div>
         </div>
       </nav>
