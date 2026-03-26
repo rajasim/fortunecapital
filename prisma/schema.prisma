@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  price       Int
+  duration    String
+  trainer     String
+  category    String
+  imageUrl    String?  // <--- THIS LINE IS THE FIX
+  createdAt   DateTime @default(now())
+}
+
+model Enrollment {
+  id              String   @id @default(cuid())
+  userName        String
+  userEmail       String
+  razorpayOrderId String   @unique
+  status          String   @default("PENDING")
+}
