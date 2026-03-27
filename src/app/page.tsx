@@ -71,7 +71,7 @@ export default function UserDashboard() {
               onClick={() => setShowLogin(true)}
               className="flex items-center gap-2 text-[10px] font-black text-slate-400 hover:text-slate-900 transition uppercase tracking-widest"
             >
-              <Lock size={14} /> Admin Access
+              <Lock size={14} />  LOGIN
             </button>
             
           </div>
