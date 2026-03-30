@@ -27,7 +27,7 @@ export default function UserDashboard() {
 
   const handleAdminLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (adminAuth.id === "asim" && adminAuth.pass === "ak4777") {
+    if (adminAuth.id === "admin" && adminAuth.pass === "omka77") {
       window.location.href = "/admin";
     } else {
       alert("Invalid ID or Password");
