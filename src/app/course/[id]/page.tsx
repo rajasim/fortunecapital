@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic";
+/**
+ * export const dynamic = "force-dynamic";
 
 import { db } from "@/lib/db";
 import { notFound } from "next/navigation";
@@ -28,7 +29,7 @@ export default async function CourseDetailPage({
 
   return (
     <div className="min-h-screen bg-white text-black p-4 md:p-12 overflow-x-hidden">
-      {/* BACKGROUND DECOR (Minimalist Design) */}
+      {/* BACKGROUND DECOR (Minimalist Design) }
       <div className="fixed top-0 right-0 -z-10 opacity-[0.03] pointer-events-none">
         <h1 className="text-[20rem] font-black uppercase italic leading-none rotate-90 translate-x-1/2">
           {course.title.charAt(0)}
@@ -36,7 +37,7 @@ export default async function CourseDetailPage({
       </div>
 
       <div className="max-w-6xl mx-auto">
-        {/* BACK BUTTON */}
+        {/* BACK BUTTON }
         <Link href="/" className="group inline-flex items-center gap-2 text-gray-400 hover:text-black transition-all mb-8 md:mb-16 font-black uppercase text-[10px] tracking-[0.3em]">
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> 
           Back to Discover
@@ -44,7 +45,7 @@ export default async function CourseDetailPage({
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16">
           
-          {/* LEFT: CONTENT */}
+          {/* LEFT: CONTENT }
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-6">
                <span className="bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase italic tracking-widest">
@@ -59,7 +60,7 @@ export default async function CourseDetailPage({
               {course.title}
             </h1>
 
-            {/* HIGHLIGHT GRID */}
+            {/* HIGHLIGHT GRID }
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
               {[
                 { icon: <Zap size={24} fill="currentColor" />, label: "Instant Access", sub: "Start learning now" },
@@ -96,7 +97,7 @@ export default async function CourseDetailPage({
             </div>
           </div>
 
-          {/* RIGHT: PAYMENT / ENROLLMENT */}
+          {/* RIGHT: PAYMENT / ENROLLMENT }
           <div className="lg:col-span-5">
             <div className="bg-white p-8 md:p-12 rounded-[3.5rem] border border-gray-100 shadow-2xl shadow-indigo-100/50 lg:sticky lg:top-12">
               <div className="mb-10 text-center lg:text-left">
@@ -132,3 +133,4 @@ export default async function CourseDetailPage({
     </div>
   );
 }
+*/

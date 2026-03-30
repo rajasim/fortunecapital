@@ -1,29 +1,44 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { Resend } from 'resend';
 
-// This forces Next.js to always get fresh data instead of using a 
-// cached (potentially empty) version on other devices.
+const resend = new Resend(process.env.re_4kagcoJ8_CP5UnFngwmBL1hUGVDD4ukK9);
 export const dynamic = "force-dynamic"; 
 
+// 1. GET: This provides the course data for your landing page
 export async function GET() {
   try {
     const courses = await db.course.findMany({
-      orderBy: {
-        createdAt: 'desc' // Shows newest courses first
-      }
+      orderBy: { createdAt: 'desc' }
+    });
+    return NextResponse.json(courses || []);
+  } catch (error) {
+    return NextResponse.json({ error: "DB Error" }, { status: 500 });
+  }
+}
+
+// 2. POST: This sends the email when the user clicks the button
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const { name, email, phone, courseTitle } = body;
+
+    const data = await resend.emails.send({
+      from: 'Enrollment <onboarding@resend.dev>',
+      to: 'fortunecapitalads@gmail.com', // Replace with your actual email
+      subject: `New Lead: ${name}`,
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee;">
+          <h2>New Student</h2>
+          <p><strong>Course:</strong> ${courseTitle}</p>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+        </div>
+      `,
     });
 
-    // If courses is null or undefined for some reason, send an empty array []
-    return NextResponse.json(courses || []);
-
-  } catch (error) {
-    console.error("DATABASE_ERROR:", error);
-    
-    // CRITICAL: Even if the database fails, we send a valid JSON object 
-    // so the frontend doesn't crash with "Unexpected end of input"
-    return NextResponse.json(
-      { error: "Internal Server Error", details: "Check Database Connection" }, 
-      { status: 500 }
-    );
+    return NextResponse.json({ success: true, data });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

@@ -1,3 +1,4 @@
+/** 
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -36,18 +37,18 @@ export default function UserDashboard() {
 
   return (
     <div className="min-h-screen bg-[#FDFDFF] text-slate-900 selection:bg-indigo-100 overflow-x-hidden">
-      {/* Background Glows */}
+      {/* Background Glows }
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[100%] md:w-[50%] h-[50%] bg-indigo-100/40 blur-[120px] rounded-full" />
         <div className="absolute bottom-[0%] right-[-5%] w-[80%] md:w-[40%] h-[40%] bg-purple-100/40 blur-[120px] rounded-full" />
       </div>
 
-      {/* Navbar */}
+      {/* Navbar }
       <nav className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-200/50 px-4 md:px-8 py-5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
           <div className="flex items-center gap-3 md:gap-6">
-            {/* Redirected Home Button */}
+            {/* Redirected Home Button }
             <a 
               href="https://fortune-capital-navigator.vercel.app/" 
               className="flex items-center gap-2 text-slate-400 hover:text-indigo-600 transition group"
@@ -78,7 +79,7 @@ export default function UserDashboard() {
         </div>
       </nav>
 
-      {/* Admin Login Modal */}
+      {/* Admin Login Modal }
       <AnimatePresence>
         {showLogin && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
@@ -102,7 +103,7 @@ export default function UserDashboard() {
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
+      {/* Hero Section }
       <header className="px-6 pt-12 md:pt-28 pb-16 md:pb-24 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
         <motion.div 
           initial={{ opacity: 0, x: -50 }} 
@@ -137,7 +138,7 @@ export default function UserDashboard() {
         </motion.div>
       </header>
 
-      {/* Catalog */}
+      {/* Catalog }
       <main className="px-5 md:px-8 pb-32 max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-16 uppercase italic underline decoration-indigo-500 decoration-8 underline-offset-8">Catalog</h2>
 
@@ -186,4 +187,4 @@ export default function UserDashboard() {
       </main>
     </div>
   );
-}
+}*/
